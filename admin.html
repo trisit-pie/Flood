@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>เจ้าหน้าที่ · แจ้งน้ำท่วม นนทบุรี</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Mitr:wght@500;600&display=swap">
+<style>
+/* หน้าเจ้าหน้าที่: ล็อกอิน -> แท็บ รายงาน / ระดับตำบล / ผู้ดูแลระบบ / บัญชีของฉัน */
+:root{
+  --font-display:"Mitr","IBM Plex Sans Thai",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#edf3f2;--surface:#ffffff;--surface-2:#e3ecec;--ink:#0e2830;--muted:#48636b;--line:#c6d6d8;--accent:#0b6e8a;--on-accent:#ffffff;
+  --s0:#3b8f7d;--s1:#c99512;--s2:#d96a22;--s3:#c0392f;
+  --l0:#3b8f7d;--l1:#c99512;--l2:#d96a22;--l3:#c0392f;--l4:#7a1f5c;--lnone:#8a9a9e;
+  --h1:#3b8f7d;--h2:#7c9a1d;--h3:#c99512;--h4:#d96a22;--h5:#cf4a26;--h6:#c0392f;--h7:#a02a45;--h8:#7a1f5c;
+  --danger-bg:#fbe9e6;--danger-ink:#7a1f17;--radius:10px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1c22;--surface:#12282f;--surface-2:#1a343c;--ink:#e5f0f0;--muted:#97b2b8;--line:#27454d;--accent:#55bcd8;--on-accent:#06222b;
+    --s0:#52b39f;--s1:#e3b432;--s2:#ef8a4a;--s3:#ee6a5f;
+    --l0:#52b39f;--l1:#e3b432;--l2:#ef8a4a;--l3:#ee6a5f;--l4:#c45fa0;--lnone:#6f878c;
+    --h1:#52b39f;--h2:#a3c23a;--h3:#e3b432;--h4:#ef8a4a;--h5:#ee6a4a;--h6:#ee6a5f;--h7:#e0607f;--h8:#c45fa0;
+    --danger-bg:#3a1c1a;--danger-ink:#ffc9c3;color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin-inline:auto;padding:16px 16px 40px;display:flex;flex-direction:column;gap:16px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.25;margin:0}
+h1{font-size:clamp(1.4rem,3.6vw,2rem)}h2{font-size:1.15rem}h3{font-size:1rem}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+[hidden]{display:none!important}
+.bar{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.8rem;letter-spacing:.05em;color:var(--accent);font-weight:600}
+.brand-t{font-family:var(--font-display);font-size:1.25rem;display:block;line-height:1.25}
+.me{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.9rem}
+.tabs{display:flex;gap:6px;background:var(--surface-2);padding:4px;border-radius:10px;flex-wrap:wrap}
+.tab{border:0;background:transparent;padding:9px 16px;border-radius:7px;cursor:pointer;font-weight:600;min-height:42px}
+.tab[aria-selected="true"]{background:var(--surface);box-shadow:0 0 0 1px var(--line)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.sub,.hint{color:var(--muted);font-size:.88rem}
+.err{font-size:.88rem;color:var(--s3)}
+.ok{font-size:.88rem;color:var(--s0)}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field>label,.lab{font-weight:600;font-size:.92rem}
+input[type=text],input[type=email],input[type=password],input[type=tel],input[type=datetime-local],input[type=search],select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 12px;min-height:44px}
+textarea{resize:vertical;min-height:70px}
+.btn{background:var(--accent);color:var(--on-accent);border:0;border-radius:8px;padding:10px 18px;font-weight:600;min-height:44px;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);min-height:36px;padding:4px 12px;font-size:.88rem}
+.btn.danger{background:var(--s3);color:#fff}
+.btn.ghost.danger{background:transparent;color:var(--s3);border-color:var(--s3)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.login{max-width:420px;margin:6vh auto 0;width:100%}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.9rem}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.78rem;color:var(--muted);font-weight:600;background:var(--surface-2);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.chip{display:inline-flex;gap:6px;align-items:center;font-weight:600;font-size:.82rem;white-space:nowrap;border:1px solid var(--c,var(--line));border-radius:999px;padding:0 10px 0 6px;background:color-mix(in srgb,var(--c,var(--line)) 14%,var(--surface))}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--c,var(--muted));display:inline-block;flex:none}
+.lv{display:flex;flex-wrap:wrap;gap:6px}
+.lv input{position:absolute;opacity:0;pointer-events:none}
+.lv label{border:2px solid var(--line);border-left:8px solid var(--c);border-radius:8px;padding:3px 10px;font-weight:600;font-size:.85rem;cursor:pointer;background:var(--bg);min-height:34px;display:inline-flex;align-items:center}
+.lv input:checked+label{border-color:var(--c);background:color-mix(in srgb,var(--c) 18%,var(--surface));box-shadow:0 0 0 2px var(--c)}
+.lv input:focus-visible+label{outline:3px solid var(--accent);outline-offset:2px}
+.lv label.auto{--c:var(--lnone)}
+.modal{position:fixed;inset:0;background:rgba(5,20,26,.62);display:flex;align-items:center;justify-content:center;padding:16px;z-index:2000}
+.modal-card{background:var(--surface);border-radius:14px;max-width:520px;width:100%;max-height:calc(100vh - 32px);overflow:auto;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:.92rem;z-index:3000;max-width:calc(100% - 32px)}
+.note-box{background:var(--surface-2);border-radius:8px;padding:10px 12px;font-size:.88rem;color:var(--muted)}
+.warn{background:var(--danger-bg);color:var(--danger-ink);border-radius:8px;padding:10px 12px;font-size:.92rem}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <div><span class="eyebrow">สำหรับเจ้าหน้าที่ · เขตเทศบาลนครนนทบุรี</span><span class="brand-t">จัดการรายงานน้ำท่วม</span></div>
+    <div class="me" id="me" hidden><span id="me-text"></span><button class="btn ghost" id="logout" type="button">ออกจากระบบ</button></div>
+    <a href="index.html">กลับหน้าประชาชน</a>
+  </header>
+
+  <!-- ล็อกอิน -->
+  <section class="panel login" id="login" hidden aria-labelledby="login-h">
+    <h2 id="login-h">เข้าสู่ระบบเจ้าหน้าที่</h2>
+    <form id="login-form" style="display:flex;flex-direction:column;gap:12px" novalidate>
+      <div class="field"><label for="l-email">อีเมล</label><input type="email" id="l-email" autocomplete="username" required></div>
+      <div class="field"><label for="l-pass">รหัสผ่าน</label><input type="password" id="l-pass" autocomplete="current-password" required></div>
+      <p class="err" id="l-err" role="alert"></p>
+      <button class="btn" type="submit" id="l-go">เข้าสู่ระบบ</button>
+    </form>
+    <details>
+      <summary style="cursor:pointer;font-weight:600">ยังไม่มีบัญชี? ขอสิทธิ์เป็นเจ้าหน้าที่</summary>
+      <form id="reg-form" style="display:flex;flex-direction:column;gap:12px;margin-top:10px" novalidate>
+        <p class="hint">สมัครบัญชีแล้วรอผู้ดูแลระดับ super กดอนุมัติในแท็บ "ผู้ดูแลระบบ" จึงจะเข้าใช้งานได้ ถ้าระบบตั้งให้ยืนยันอีเมล ให้กดลิงก์ในอีเมลก่อน</p>
+        <div class="field"><label for="r-email">อีเมล</label><input type="email" id="r-email" autocomplete="email"></div>
+        <div class="field"><label for="r-pass">ตั้งรหัสผ่าน (อย่างน้อย 8 ตัว)</label><input type="password" id="r-pass" autocomplete="new-password"></div>
+        <p class="err" id="r-err" role="alert"></p><p class="ok" id="r-ok"></p>
+        <button class="btn ghost" type="submit">สมัครบัญชี</button>
+      </form>
+    </details>
+    <p class="hint" id="cfg-warn" hidden></p>
+  </section>
+
+  <!-- บัญชีที่ยังไม่มีสิทธิ์ -->
+  <section class="panel login" id="noaccess" hidden>
+    <h2>บัญชีนี้ยังไม่มีสิทธิ์เจ้าหน้าที่</h2>
+    <p id="noaccess-text"></p>
+    <p class="hint">ให้ผู้ดูแลระดับ super เปิดแท็บ "ผู้ดูแลระบบ" แล้วกดอนุมัติอีเมลนี้ หรือถูกปิดการใช้งานอยู่</p>
+    <button class="btn ghost" id="noaccess-out" type="button">ออกจากระบบ</button>
+  </section>
+
+  <!-- แอป -->
+  <div id="app" hidden style="display:flex;flex-direction:column;gap:16px">
+    <nav class="tabs" role="tablist" aria-label="เมนู">
+      <button class="tab" role="tab" id="t-reports" aria-selected="true" type="button">รายงาน</button>
+      <button class="tab" role="tab" id="t-levels" aria-selected="false" type="button">ระดับตำบล</button>
+      <button class="tab" role="tab" id="t-admins" aria-selected="false" type="button" hidden>ผู้ดูแลระบบ</button>
+      <button class="tab" role="tab" id="t-account" aria-selected="false" type="button">บัญชีของฉัน</button>
+    </nav>
+
+    <section id="p-reports" class="panel" aria-labelledby="rep-h">
+      <div class="row" style="justify-content:space-between"><h2 id="rep-h">รายงานจากประชาชน</h2>
+        <div class="row"><button class="btn" id="add-btn" type="button">+ เพิ่มรายงาน</button><button class="btn ghost" id="csv-btn" type="button">ส่งออก CSV (มีชื่อ-เบอร์)</button><button class="btn ghost" id="reload-btn" type="button">โหลดใหม่</button></div></div>
+      <div class="grid" id="filters">
+        <div class="field"><label for="f-tambon">ตำบล</label><select id="f-tambon"></select></div>
+        <div class="field"><label for="f-height">ความสูงของน้ำ / สถานะ</label><select id="f-height"></select></div>
+        <div class="field"><label for="f-window">ช่วงเวลาเกิดเหตุ</label><select id="f-window"><option value="24">24 ชั่วโมงล่าสุด</option><option value="48">48 ชั่วโมงล่าสุด</option><option value="168" selected>7 วันล่าสุด</option><option value="0">ทั้งหมดที่โหลด</option></select></div>
+        <div class="field"><label for="f-q">ค้นหาซอย / ชื่อ / เบอร์</label><input type="search" id="f-q" placeholder="พิมพ์เพื่อค้นหา"></div>
+      </div>
+      <p class="sub" id="count"></p>
+      <div class="tablewrap"><table id="rep-table"><thead><tr><th>เวลาเกิดเหตุ</th><th>ตำบล</th><th>ซอย / ถนน</th><th>ระดับน้ำ / สถานะ</th><th>ผู้แจ้ง</th><th>หมายเหตุ</th><th>ที่มา</th><th></th></tr></thead><tbody></tbody></table></div>
+      <p class="err" id="rep-err" role="alert"></p>
+    </section>
+
+    <section id="p-levels" class="panel" aria-labelledby="lv-h" hidden>
+      <h2 id="lv-h">กำหนดระดับสถานการณ์รายตำบล</h2>
+      <p class="sub">ระดับที่กำหนดจะแสดงเป็นสีและตัวอักษรบนแผนที่หน้าประชาชนทันที ถ้าเลือก "อัตโนมัติ" ระบบประเมินจากสถานะถนนที่แย่ที่สุดในตำบลจากรายงาน 48 ชั่วโมง</p>
+      <div class="tablewrap"><table id="lv-table" style="min-width:900px"><thead><tr><th>ตำบล</th><th>รายงาน 48 ชม.</th><th>ประเมินอัตโนมัติ</th><th>ระดับที่กำหนด</th><th>หมายเหตุถึงประชาชน</th><th></th></tr></thead><tbody></tbody></table></div>
+      <p class="err" id="lv-err" role="alert"></p>
+    </section>
+
+    <section id="p-admins" class="panel" aria-labelledby="ad-h" hidden>
+      <div class="row" style="justify-content:space-between"><h2 id="ad-h">จัดการผู้ดูแลระบบ</h2><button class="btn ghost" id="ad-reload" type="button">โหลดใหม่</button></div>
+      <p class="hint">บทบาท super จัดการผู้ดูแลได้ ส่วน admin จัดการรายงานและระดับตำบลได้ ต้องมี super ที่ใช้งานอยู่อย่างน้อย 1 คนเสมอ</p>
+      <div class="tablewrap"><table id="ad-table" style="min-width:820px"><thead><tr><th>อีเมล</th><th>ชื่อที่แสดง</th><th>บทบาท</th><th>สถานะ</th><th>เข้าล่าสุด</th><th></th></tr></thead><tbody></tbody></table></div>
+      <h3>รออนุมัติ</h3>
+      <div class="tablewrap"><table id="pd-table" style="min-width:600px"><thead><tr><th>อีเมลที่สมัคร</th><th>สมัครเมื่อ</th><th>ยืนยันอีเมล</th><th></th></tr></thead><tbody></tbody></table></div>
+      <p class="err" id="ad-err" role="alert"></p>
+    </section>
+
+    <section id="p-account" class="panel" aria-labelledby="ac-h" hidden>
+      <h2 id="ac-h">บัญชีของฉัน</h2>
+      <p id="ac-info"></p>
+      <form id="pw-form" style="display:flex;flex-direction:column;gap:10px;max-width:360px" novalidate>
+        <div class="field"><label for="pw-new">รหัสผ่านใหม่ (อย่างน้อย 8 ตัว)</label><input type="password" id="pw-new" autocomplete="new-password"></div>
+        <p class="err" id="pw-err" role="alert"></p><p class="ok" id="pw-ok"></p>
+        <button class="btn" type="submit">เปลี่ยนรหัสผ่าน</button>
+      </form>
+    </section>
+  </div>
+</div>
+
+<div class="modal" id="m-edit" role="dialog" aria-modal="true" aria-labelledby="m-edit-h" hidden>
+  <form class="modal-card" id="edit-form" novalidate>
+    <h2 id="m-edit-h">เพิ่มรายงาน</h2>
+    <div class="field"><label for="e-type">ประเภท</label><select id="e-type"><option value="flood">น้ำท่วม</option><option value="recede">น้ำลดแล้ว</option></select></div>
+    <div class="field"><label for="e-tambon">ตำบล</label><select id="e-tambon"></select></div>
+    <div class="field"><label for="e-soi">ซอย / ถนน</label><input type="text" id="e-soi" maxlength="100"></div>
+    <div class="field" id="e-h-box"><label for="e-height">ความสูงของน้ำ</label><select id="e-height"></select></div>
+    <div class="field" id="e-r-box" hidden><label for="e-rstate">สภาพหลังน้ำลด</label><select id="e-rstate"><option value="dry">แห้งสนิท</option><option value="lt5">น้ำสูง &lt; 5 ซม.</option></select></div>
+    <div class="field"><label for="e-when">วันที่และเวลาเกิดเหตุ</label><input type="datetime-local" id="e-when"></div>
+    <div class="field"><label for="e-note">หมายเหตุ</label><textarea id="e-note" maxlength="300"></textarea></div>
+    <div id="e-who" class="grid">
+      <div class="field"><label for="e-name">ชื่อผู้แจ้ง <span class="hint">(เว้นว่างได้ จะใช้ชื่อของคุณ)</span></label><input type="text" id="e-name" maxlength="80"></div>
+      <div class="field"><label for="e-phone">เบอร์โทรผู้แจ้ง</label><input type="tel" id="e-phone" maxlength="14"></div>
+    </div>
+    <p class="hint" id="e-who-note" hidden></p>
+    <p class="err" id="e-err" role="alert"></p>
+    <div class="row"><button class="btn" type="submit" id="e-save">บันทึก</button><button class="btn ghost" type="button" id="e-cancel">ยกเลิก</button></div>
+  </form>
+</div>
+<div class="modal" id="m-conf" role="alertdialog" aria-modal="true" aria-labelledby="m-conf-h" hidden>
+  <div class="modal-card">
+    <h2 id="m-conf-h"></h2><p id="m-conf-t"></p>
+    <div class="row"><button class="btn danger" type="button" id="c-yes">ยืนยัน</button><button class="btn ghost" type="button" id="c-no">ยกเลิก</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+  "use strict";
+  var TAMBONS=["สวนใหญ่","ตลาดขวัญ","บางเขน","บางกระสอ","ท่าทราย"];
+  var HEIGHTS=[
+    {id:"h1",label:"6–10 ซม.",lo:6,hi:10,mid:8},{id:"h2",label:"11–20 ซม.",lo:11,hi:20,mid:15.5},{id:"h3",label:"21–35 ซม.",lo:21,hi:35,mid:28},
+    {id:"h4",label:"36–50 ซม.",lo:36,hi:50,mid:43},{id:"h5",label:"51–100 ซม.",lo:51,hi:100,mid:75.5},{id:"h6",label:"101–200 ซม.",lo:101,hi:200,mid:150},
+    {id:"h7",label:"มากกว่า 2 ม.",lo:201,hi:300,mid:250},{id:"h8",label:"วิกฤต",lo:301,hi:400,mid:350}
+  ];
+  var RSTATES={dry:"แห้งสนิท",lt5:"น้ำสูง < 5 ซม."};
+  var STATUS=[{id:0,max:10},{id:1,max:20},{id:2,max:35},{id:3,max:Infinity}];
+  var LEVELS=[{id:0,name:"ปกติ",v:"--l0"},{id:1,name:"เฝ้าระวัง",v:"--l1"},{id:2,name:"เตือนภัย",v:"--l2"},{id:3,name:"วิกฤต",v:"--l3"},{id:4,name:"วิกฤตมาก",v:"--l4"}];
+  var WINDOW_MS=48*3600*1000;
+  var H_BY={};HEIGHTS.forEach(function(h){H_BY[h.id]=h;});
+  var LS="nbt-admin-session";
+
+  var cfg=window.FLOOD_CONFIG||{};
+  var base=String(cfg.supabaseUrl||"").trim().replace(/\/+$/,"").replace(/\/rest\/v1$/,"");
+  var anon=String(cfg.supabaseAnonKey||"").trim();
+  var session=null,me=null,rows=[],levelRows={},editing=null,confirmCb=null,lastFocus=null;
+
+  function $(id){return document.getElementById(id);}
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+  function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function lsDel(k){try{localStorage.removeItem(k);}catch(e){}}
+  var tT=null;function toast(m,ms){var t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(tT);tT=setTimeout(function(){t.hidden=true;},ms||3500);}
+  var dtf=new Intl.DateTimeFormat("th-TH",{day:"numeric",month:"short",year:"2-digit",hour:"2-digit",minute:"2-digit"});
+  function fmt(ts){return ts?dtf.format(new Date(ts)):"—";}
+  function pad(n){return n<10?"0"+n:""+n;}
+  function toLocalInput(ts){var d=new Date(ts);return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes());}
+  function cleanPhone(v){return String(v||"").replace(/[๐-๙]/g,function(c){return String(c.charCodeAt(0)-0x0E50);}).replace(/[\s\-().]/g,"");}
+  function errMsg(j,status){return (j&&(j.message||j.msg||j.error_description||j.error))||("รหัส "+status);}
+
+  /* ---------- Supabase Auth + REST ---------- */
+  function authFetch(path,opts){
+    opts=opts||{};opts.headers=Object.assign({"apikey":anon,"Content-Type":"application/json"},opts.headers||{});
+    return fetch(base+path,opts);
+  }
+  function saveSession(j){
+    session={access:j.access_token,refresh:j.refresh_token,exp:Date.now()+(Number(j.expires_in)||3600)*1000-30000,id:j.user&&j.user.id,email:(j.user&&j.user.email)||""};
+    lsSet(LS,JSON.stringify(session));
+  }
+  function refresh(){
+    if(!session||!session.refresh)return Promise.reject(new Error("no session"));
+    return authFetch("/auth/v1/token?grant_type=refresh_token",{method:"POST",body:JSON.stringify({refresh_token:session.refresh})}).then(function(r){
+      if(!r.ok)throw new Error("refresh failed");return r.json();
+    }).then(function(j){if(!j.user)j.user={id:session.id,email:session.email};saveSession(j);});
+  }
+  function api(path,opts,retried){
+    opts=opts||{};
+    var ready=(session&&Date.now()>session.exp&&!retried)?refresh():Promise.resolve();
+    return ready.then(function(){
+      opts.headers=Object.assign({"apikey":anon,"Content-Type":"application/json","Authorization":"Bearer "+session.access},opts.headers||{});
+      return fetch(base+"/rest/v1/"+path,opts);
+    }).then(function(r){
+      if(r.status===401&&!retried){return refresh().then(function(){return api(path,opts,true);});}
+      if(r.status===401){forceLogout("หมดเวลาการเข้าสู่ระบบ ล็อกอินใหม่อีกครั้ง");throw new Error("401");}
+      return r;
+    });
+  }
+  function call(res,r){
+    return r.text().then(function(t){var j=null;try{j=t?JSON.parse(t):null;}catch(e){}
+      if(!r.ok){var e=new Error(errMsg(j,r.status));e.status=r.status;throw e;}return j;});
+  }
+  function rpc(fn,args){return api("rpc/"+fn,{method:"POST",body:JSON.stringify(args||{})}).then(function(r){return call(null,r);});}
+  function get(path){return api(path).then(function(r){return call(null,r);});}
+
+  /* ---------- screens ---------- */
+  function show(which){
+    $("login").hidden=which!=="login";$("noaccess").hidden=which!=="noaccess";
+    $("app").style.display=which==="app"?"flex":"none";$("app").hidden=which!=="app";
+    $("me").hidden=which!=="app";
+  }
+  function forceLogout(msg){
+    session=null;me=null;lsDel(LS);show("login");
+    if(msg)$("l-err").textContent=msg;
+  }
+  function login(ev){
+    ev.preventDefault();$("l-err").textContent="";
+    var email=$("l-email").value.trim(),pw=$("l-pass").value;
+    if(!email||!pw){$("l-err").textContent="กรอกอีเมลและรหัสผ่าน";return;}
+    $("l-go").disabled=true;
+    authFetch("/auth/v1/token?grant_type=password",{method:"POST",body:JSON.stringify({email:email,password:pw})}).then(function(r){
+      return r.json().catch(function(){return {};}).then(function(j){
+        if(!r.ok){throw new Error(/invalid/i.test(errMsg(j,r.status))?"อีเมลหรือรหัสผ่านไม่ถูกต้อง":errMsg(j,r.status));}
+        saveSession(j);$("l-pass").value="";return enter();
+      });
+    }).catch(function(e){$("l-err").textContent=(e&&e.message)||"เข้าสู่ระบบไม่สำเร็จ";if(e instanceof TypeError)$("l-err").textContent="เชื่อมต่อ Supabase ไม่ได้ ตรวจ config.js และอินเทอร์เน็ต";}).then(function(){$("l-go").disabled=false;});
+  }
+  function register(ev){
+    ev.preventDefault();$("r-err").textContent="";$("r-ok").textContent="";
+    var email=$("r-email").value.trim(),pw=$("r-pass").value;
+    if(!/^\S+@\S+\.\S+$/.test(email)){$("r-err").textContent="กรอกอีเมลให้ถูกต้อง";return;}
+    if(pw.length<8){$("r-err").textContent="รหัสผ่านต้องมีอย่างน้อย 8 ตัว";return;}
+    authFetch("/auth/v1/signup",{method:"POST",body:JSON.stringify({email:email,password:pw})}).then(function(r){
+      return r.json().catch(function(){return {};}).then(function(j){
+        if(!r.ok)throw new Error(errMsg(j,r.status));
+        $("r-ok").textContent="สมัครแล้ว รอผู้ดูแลระดับ super อนุมัติ (และกดยืนยันอีเมลถ้าระบบส่งมา)";$("r-pass").value="";
+      });
+    }).catch(function(e){$("r-err").textContent=e.message||"สมัครไม่สำเร็จ";});
+  }
+  function enter(){
+    return get("admins?select=*&user_id=eq."+encodeURIComponent(session.id)).then(function(a){
+      var mine=(a||[])[0];
+      if(!mine||!mine.active){
+        me=null;$("noaccess-text").textContent=(session.email||"บัญชีนี้")+(mine&&!mine.active?" ถูกปิดการใช้งาน":" ยังไม่ได้รับสิทธิ์เจ้าหน้าที่");show("noaccess");return;
+      }
+      me=mine;
+      $("me-text").textContent=(me.display_name||me.email)+" · "+(me.role==="super"?"super":"admin");
+      $("t-admins").hidden=me.role!=="super";
+      $("ac-info").textContent="อีเมล "+me.email+" · บทบาท "+me.role;
+      show("app");tab("reports");return loadAll();
+    });
+  }
+  function tab(name){
+    ["reports","levels","admins","account"].forEach(function(n){
+      $("p-"+n).hidden=n!==name;$("t-"+n).setAttribute("aria-selected",n===name?"true":"false");
+    });
+    if(name==="levels")renderLevels();
+    if(name==="admins")loadAdmins();
+  }
+
+  /* ---------- analysis (ย่อจากหน้าประชาชน) ---------- */
+  function median(a){var b=a.slice().sort(function(x,y){return x-y;}),n=b.length;return n%2?b[(n-1)/2]:(b[n/2-1]+b[n/2])/2;}
+  function stripPrefix(s){return String(s||"").trim().toLowerCase().replace(/\s+/g,"").replace(/^(ซอย|ซ\.|ถนน|ถ\.)/,"");}
+  function autoStats(){
+    var now=Date.now(),groups={},T={};
+    TAMBONS.forEach(function(t){T[t]={n:0,worst:-1,imp:0,crit:false,maxH:null};});
+    rows.forEach(function(r){(groups[r.tambon+"|"+stripPrefix(r.soi)]=groups[r.tambon+"|"+stripPrefix(r.soi)]||[]).push(r);
+      if(r.type==="flood"&&H_BY[r.height]&&now-r.observed_at<=WINDOW_MS&&T[r.tambon]){T[r.tambon].n++;}});
+    Object.keys(groups).forEach(function(k){
+      var g=groups[k].slice().sort(function(a,b){return a.observed_at-b.observed_at;}),lastRec=null;
+      g.forEach(function(r){if(r.type==="recede")lastRec=r;});
+      var fl=g.filter(function(r){return r.type==="flood"&&H_BY[r.height]&&now-r.observed_at<=WINDOW_MS&&(!lastRec||r.observed_at>lastRec.observed_at);});
+      if(!fl.length||!T[g[0].tambon])return;
+      var est=median(fl.slice(-5).map(function(r){return H_BY[r.height].mid;}));
+      var st=0;for(var i=0;i<STATUS.length;i++){if(est<=STATUS[i].max){st=STATUS[i].id;break;}}
+      var t=T[g[0].tambon];if(st>t.worst)t.worst=st;if(st===3)t.imp++;if(est>200)t.crit=true;
+    });
+    Object.keys(T).forEach(function(k){var t=T[k],lv=0;
+      if(t.worst>=0){if(t.worst===3)lv=(t.crit||t.imp>=3)?4:3;else if(t.worst===2)lv=2;else lv=1;}
+      t.auto=t.worst<0?null:lv;});
+    return T;
+  }
+  function chip(label,v){var c=el("span","chip");c.style.setProperty("--c","var("+v+")");var d=el("i","dot");c.appendChild(d);c.appendChild(document.createTextNode(label));return c;}
+
+  /* ---------- reports ---------- */
+  function loadAll(){
+    return Promise.all([
+      get("admin_contacts?select=*&order=observed_at.desc&limit=2000"),
+      get("tambon_levels?select=*")
+    ]).then(function(x){
+      rows=x[0]||[];levelRows={};(x[1]||[]).forEach(function(l){levelRows[l.tambon]=l;});
+      $("rep-err").textContent="";renderReports();renderLevels();
+    }).catch(function(e){if(e.message!=="401")$("rep-err").textContent="โหลดข้อมูลไม่ได้: "+e.message;});
+  }
+  function buildFilters(){
+    var ft=$("f-tambon"),o=el("option","","ทุกตำบล");o.value="";ft.appendChild(o);
+    var et=$("e-tambon");
+    TAMBONS.forEach(function(t){var a=el("option",null,t);a.value=t;ft.appendChild(a);var b=el("option",null,t);b.value=t;et.appendChild(b);});
+    var fh=$("f-height");
+    [["","ทุกระดับ / ทุกสถานะ"],["flood","น้ำท่วม (ทุกระดับ)"]].concat(HEIGHTS.map(function(h){return [h.id,"น้ำท่วม "+h.label];})).concat([["recede","น้ำลดแล้ว (ทั้งหมด)"],["dry","น้ำลด: แห้งสนิท"],["lt5","น้ำลด: น้ำสูง < 5 ซม."]]).forEach(function(x){
+      var a=el("option",null,x[1]);a.value=x[0];fh.appendChild(a);});
+    var eh=$("e-height");HEIGHTS.forEach(function(h){var a=el("option",null,h.label);a.value=h.id;eh.appendChild(a);});
+  }
+  function filtered(){
+    var tb=$("f-tambon").value,fh=$("f-height").value,w=Number($("f-window").value),q=$("f-q").value.trim().toLowerCase(),now=Date.now();
+    return rows.filter(function(r){
+      if(tb&&r.tambon!==tb)return false;
+      if(w&&now-r.observed_at>w*3600000)return false;
+      if(fh){
+        if(fh==="flood"&&r.type!=="flood")return false;
+        if(fh==="recede"&&r.type!=="recede")return false;
+        if(H_BY[fh]&&r.height!==fh)return false;
+        if((fh==="dry"||fh==="lt5")&&r.rstate!==fh)return false;
+      }
+      if(q&&(r.soi+" "+r.name+" "+r.phone+" "+r.note).toLowerCase().indexOf(q)<0)return false;
+      return true;
+    });
+  }
+  function renderReports(){
+    var list=filtered(),tb=document.querySelector("#rep-table tbody");tb.textContent="";
+    $("count").textContent="แสดง "+list.length+" จาก "+rows.length+" รายงานที่โหลด";
+    if(!list.length){var tr=el("tr"),td=el("td","","ไม่มีรายงานที่ตรงกับตัวกรอง");td.colSpan=8;tr.appendChild(td);tb.appendChild(tr);}
+    list.forEach(function(r){
+      var tr=el("tr");
+      tr.appendChild(el("td","num",fmt(r.observed_at)));
+      tr.appendChild(el("td",null,r.tambon));tr.appendChild(el("td",null,r.soi));
+      var ts=el("td");
+      if(r.type==="flood"&&H_BY[r.height])ts.appendChild(chip("น้ำท่วม "+H_BY[r.height].label,"--"+r.height));
+      else ts.appendChild(chip("น้ำลด: "+(RSTATES[r.rstate]||""),"--s0"));
+      tr.appendChild(ts);
+      var tw=el("td");tw.appendChild(document.createTextNode(r.name));tw.appendChild(document.createElement("br"));tw.appendChild(el("span","hint",r.phone==="0000000000"?"(ไม่มีเบอร์)":r.phone));tr.appendChild(tw);
+      tr.appendChild(el("td",null,r.note||""));
+      tr.appendChild(el("td",null,r.source==="admin"?"เจ้าหน้าที่":"ประชาชน"));
+      var ta=el("td"),ra=el("div","row");
+      var be=el("button","btn ghost","แก้ไข");be.type="button";be.addEventListener("click",function(){openEdit(r);});
+      var bd=el("button","btn ghost danger","ลบ");bd.type="button";bd.addEventListener("click",function(){askDelete(r);});
+      ra.appendChild(be);ra.appendChild(bd);ta.appendChild(ra);tr.appendChild(ta);tb.appendChild(tr);
+    });
+  }
+  function csvCell(v){v=String(v==null?"":v);if(/^[=+\-@\t\r]/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"';}
+  function exportCsv(){
+    var head=["รหัส","เวลาเกิดเหตุ","เวลารับแจ้ง","ตำบล","ซอย/ถนน","ประเภท","ระดับน้ำ","สภาพหลังน้ำลด","ชื่อผู้แจ้ง","เบอร์โทร","หมายเหตุ","ที่มา"];
+    var lines=[head.map(csvCell).join(",")];
+    filtered().forEach(function(r){lines.push([r.report_id,new Date(r.observed_at).toISOString(),new Date(r.created_at).toISOString(),r.tambon,r.soi,r.type==="flood"?"น้ำท่วม":"น้ำลด",H_BY[r.height]?H_BY[r.height].label:"",RSTATES[r.rstate]||"",r.name,r.phone,r.note,r.source].map(csvCell).join(","));});
+    var blob=new Blob(["﻿"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="flood-reports-"+new Date().toISOString().slice(0,10)+".csv";document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+  }
+
+  /* edit / add */
+  function syncEditType(){var f=$("e-type").value==="flood";$("e-h-box").hidden=!f;$("e-r-box").hidden=f;}
+  function openEdit(r){
+    editing=r||null;lastFocus=document.activeElement;
+    $("m-edit-h").textContent=r?"แก้ไขรายงาน #"+r.report_id:"เพิ่มรายงาน";
+    $("e-type").value=r?r.type:"flood";$("e-tambon").value=r?r.tambon:TAMBONS[0];$("e-soi").value=r?r.soi:"";
+    $("e-height").value=r&&r.height?r.height:"h1";$("e-rstate").value=r&&r.rstate?r.rstate:"dry";
+    $("e-when").value=toLocalInput(r?r.observed_at:Date.now());$("e-note").value=r?r.note:"";
+    $("e-name").value=r?r.name:"";$("e-phone").value=r?r.phone:"";
+    $("e-name").disabled=$("e-phone").disabled=!!r;
+    $("e-who-note").hidden=!r;$("e-who-note").textContent=r?"ชื่อและเบอร์ผู้แจ้งแก้ไขไม่ได้ เพื่อให้ตรงกับที่ผู้แจ้งกรอกจริง":"";
+    $("e-err").textContent="";syncEditType();$("m-edit").hidden=false;$("e-type").focus();
+  }
+  function closeEdit(){$("m-edit").hidden=true;if(lastFocus&&lastFocus.focus){try{lastFocus.focus();}catch(e){}}}
+  function saveEdit(ev){
+    ev.preventDefault();var err=$("e-err");err.textContent="";
+    var type=$("e-type").value,soi=$("e-soi").value.trim(),when=new Date($("e-when").value).getTime();
+    if(soi.length<2){err.textContent="ระบุซอยหรือถนน";return;}
+    if(!isFinite(when)){err.textContent="ระบุวันที่และเวลา";return;}
+    if(when>Date.now()+120000){err.textContent="เวลาเกิดเหตุต้องไม่เป็นเวลาในอนาคต";return;}
+    var name=$("e-name").value.trim(),phone=cleanPhone($("e-phone").value);
+    if(!editing&&(name||phone)){
+      if(name.length<2){err.textContent="ชื่อผู้แจ้งต้องยาวอย่างน้อย 2 ตัวอักษร (หรือเว้นว่างทั้งชื่อและเบอร์)";return;}
+      if(!/^0\d{8,9}$/.test(phone)){err.textContent="เบอร์โทรต้องมี 9–10 หลักและขึ้นต้นด้วย 0 (หรือเว้นว่างทั้งชื่อและเบอร์)";return;}
+    }
+    $("e-save").disabled=true;
+    rpc("admin_save_report",{p_id:editing?editing.report_id:null,p_type:type,p_tambon:$("e-tambon").value,p_soi:soi,
+      p_height:type==="flood"?$("e-height").value:null,p_rstate:type==="recede"?$("e-rstate").value:null,
+      p_note:$("e-note").value.trim(),p_observed_at:when,p_name:editing?"":name,p_phone:editing?"":phone})
+    .then(function(){closeEdit();toast(editing?"แก้ไขรายงานแล้ว":"เพิ่มรายงานแล้ว");return loadAll();})
+    .catch(function(e){if(e.message!=="401")err.textContent=e.message;}).then(function(){$("e-save").disabled=false;});
+  }
+  function ask(title,text,yes,cb){
+    lastFocus=document.activeElement;$("m-conf-h").textContent=title;$("m-conf-t").textContent=text;$("c-yes").textContent=yes;confirmCb=cb;$("m-conf").hidden=false;$("c-no").focus();
+  }
+  function closeConf(){$("m-conf").hidden=true;confirmCb=null;if(lastFocus&&lastFocus.focus){try{lastFocus.focus();}catch(e){}}}
+  function askDelete(r){
+    ask("ลบรายงาน #"+r.report_id+" ?",r.soi+" ตำบล"+r.tambon+" · "+fmt(r.observed_at)+" ลบแล้วกู้คืนไม่ได้ และถ้าผู้แจ้งไม่มีรายงานอื่น ชื่อและเบอร์จะถูกลบด้วย","ลบรายงาน",function(){
+      return rpc("admin_delete_report",{p_id:r.report_id}).then(function(){toast("ลบรายงานแล้ว");return loadAll();});
+    });
+  }
+
+  /* ---------- levels ---------- */
+  function renderLevels(){
+    var T=autoStats(),tb=document.querySelector("#lv-table tbody");tb.textContent="";
+    TAMBONS.forEach(function(t,idx){
+      var cur=levelRows[t],tr=el("tr");
+      tr.appendChild(el("td",null,"ตำบล"+t));
+      tr.appendChild(el("td","num",String(T[t].n)));
+      var ta=el("td");
+      if(T[t].auto==null)ta.appendChild(el("span","hint","ไม่มีรายงาน"));
+      else ta.appendChild(chip(LEVELS[T[t].auto].name,LEVELS[T[t].auto].v));
+      tr.appendChild(ta);
+      var tl=el("td"),lv=el("div","lv");
+      [{id:"auto",name:"อัตโนมัติ",v:null}].concat(LEVELS).forEach(function(L){
+        var id="lv-"+idx+"-"+L.id,inp=document.createElement("input");inp.type="radio";inp.name="lv-"+idx;inp.id=id;inp.value=L.id;
+        inp.checked=L.id==="auto"?!cur:(cur&&Number(cur.level)===L.id);
+        var lab=el("label",L.id==="auto"?"auto":"",L.name);lab.htmlFor=id;if(L.v)lab.style.setProperty("--c","var("+L.v+")");
+        lv.appendChild(inp);lv.appendChild(lab);
+      });
+      tl.appendChild(lv);tr.appendChild(tl);
+      var tn=el("td"),ni=document.createElement("input");ni.type="text";ni.maxLength=200;ni.value=cur?cur.note:"";ni.placeholder="เช่น น้ำเอ่อล้นตลิ่ง งดใช้เส้นทาง";ni.setAttribute("aria-label","หมายเหตุตำบล"+t);
+      tn.appendChild(ni);tr.appendChild(tn);
+      var ts=el("td"),b=el("button","btn ghost","บันทึก");b.type="button";
+      var info=el("div","hint",cur?("ล่าสุดโดย "+(cur.updated_by||"-")+" · "+fmt(cur.updated_at)):"");
+      b.addEventListener("click",function(){
+        var sel=tr.querySelector("input[type=radio]:checked"),val=sel?sel.value:"auto";
+        b.disabled=true;
+        rpc("admin_set_level",{p_tambon:t,p_level:val==="auto"?null:Number(val),p_note:val==="auto"?"":ni.value.trim()}).then(function(){
+          toast("บันทึกระดับตำบล"+t+"แล้ว");$("lv-err").textContent="";return get("tambon_levels?select=*").then(function(ls){levelRows={};(ls||[]).forEach(function(l){levelRows[l.tambon]=l;});renderLevels();});
+        }).catch(function(e){if(e.message!=="401")$("lv-err").textContent="บันทึกไม่ได้: "+e.message;b.disabled=false;});
+      });
+      ts.appendChild(b);ts.appendChild(info);tr.appendChild(ts);tb.appendChild(tr);
+    });
+  }
+
+  /* ---------- admins ---------- */
+  function loadAdmins(){
+    $("ad-err").textContent="";
+    return Promise.all([rpc("admin_list_members"),rpc("admin_pending_users")]).then(function(x){
+      var tb=document.querySelector("#ad-table tbody");tb.textContent="";
+      (x[0]||[]).forEach(function(a){
+        var tr=el("tr"),isMe=a.user_id===me.user_id;
+        tr.appendChild(el("td",null,a.email+(isMe?" (คุณ)":"")));
+        var tn=el("td"),ni=document.createElement("input");ni.type="text";ni.value=a.display_name||"";ni.maxLength=80;ni.setAttribute("aria-label","ชื่อที่แสดง "+a.email);tn.appendChild(ni);tr.appendChild(tn);
+        var tr2=el("td"),sr=document.createElement("select");sr.setAttribute("aria-label","บทบาท "+a.email);
+        [["admin","admin"],["super","super"]].forEach(function(o){var op=el("option",null,o[1]);op.value=o[0];sr.appendChild(op);});sr.value=a.role;tr2.appendChild(sr);tr.appendChild(tr2);
+        var ta=el("td"),ss=document.createElement("select");ss.setAttribute("aria-label","สถานะ "+a.email);
+        [["true","ใช้งาน"],["false","ปิดการใช้งาน"]].forEach(function(o){var op=el("option",null,o[1]);op.value=o[0];ss.appendChild(op);});ss.value=String(a.active);ta.appendChild(ss);tr.appendChild(ta);
+        tr.appendChild(el("td","num",fmt(a.last_sign_in)));
+        var tb2=el("td"),rw=el("div","row");
+        var bs=el("button","btn ghost","บันทึก");bs.type="button";
+        bs.addEventListener("click",function(){
+          rpc("admin_update_member",{p_user:a.user_id,p_role:sr.value,p_active:ss.value==="true",p_name:ni.value.trim()}).then(function(){toast("บันทึกแล้ว");return loadAdmins();}).catch(function(e){if(e.message!=="401")$("ad-err").textContent=e.message;});
+        });
+        var br=el("button","btn ghost danger","ลบสิทธิ์");br.type="button";
+        br.addEventListener("click",function(){ask("ลบสิทธิ์ "+a.email+" ?","บัญชีล็อกอินยังอยู่ แต่จะเข้าจัดการรายงานไม่ได้อีก","ลบสิทธิ์",function(){
+          return rpc("admin_remove_member",{p_user:a.user_id}).then(function(){toast("ลบสิทธิ์แล้ว");return loadAdmins();});});});
+        rw.appendChild(bs);rw.appendChild(br);tb2.appendChild(rw);tr.appendChild(tb2);tb.appendChild(tr);
+      });
+      var pb=document.querySelector("#pd-table tbody");pb.textContent="";
+      if(!(x[1]||[]).length){var tr0=el("tr"),td0=el("td","","ไม่มีผู้รออนุมัติ");td0.colSpan=4;tr0.appendChild(td0);pb.appendChild(tr0);}
+      (x[1]||[]).forEach(function(u){
+        var tr=el("tr");tr.appendChild(el("td",null,u.email));tr.appendChild(el("td","num",fmt(u.created_at)));tr.appendChild(el("td",null,u.confirmed?"ยืนยันแล้ว":"ยังไม่ยืนยัน"));
+        var td=el("td"),rw=el("div","row");
+        [["admin","อนุมัติเป็น admin"],["super","อนุมัติเป็น super"]].forEach(function(o){
+          var b=el("button","btn ghost",o[1]);b.type="button";
+          b.addEventListener("click",function(){rpc("admin_add_member",{p_user:u.user_id,p_role:o[0],p_name:""}).then(function(){toast("อนุมัติแล้ว");return loadAdmins();}).catch(function(e){if(e.message!=="401")$("ad-err").textContent=e.message;});});
+          rw.appendChild(b);
+        });
+        td.appendChild(rw);tr.appendChild(td);pb.appendChild(tr);
+      });
+    }).catch(function(e){if(e.message!=="401")$("ad-err").textContent="โหลดรายชื่อไม่ได้: "+e.message;});
+  }
+
+  function changePw(ev){
+    ev.preventDefault();$("pw-err").textContent="";$("pw-ok").textContent="";
+    var pw=$("pw-new").value;if(pw.length<8){$("pw-err").textContent="รหัสผ่านต้องมีอย่างน้อย 8 ตัว";return;}
+    (Date.now()>session.exp?refresh():Promise.resolve()).then(function(){
+      return authFetch("/auth/v1/user",{method:"PUT",headers:{"Authorization":"Bearer "+session.access},body:JSON.stringify({password:pw})});
+    }).then(function(r){return r.json().catch(function(){return {};}).then(function(j){
+      if(!r.ok)throw new Error(errMsg(j,r.status));$("pw-ok").textContent="เปลี่ยนรหัสผ่านแล้ว";$("pw-new").value="";});
+    }).catch(function(e){$("pw-err").textContent=e.message||"เปลี่ยนรหัสผ่านไม่สำเร็จ";});
+  }
+  function logout(){
+    var s=session;session=null;me=null;lsDel(LS);
+    if(s)authFetch("/auth/v1/logout",{method:"POST",headers:{"Authorization":"Bearer "+s.access}}).catch(function(){});
+    rows=[];show("login");
+  }
+
+  /* ---------- boot ---------- */
+  buildFilters();
+  ["f-tambon","f-height","f-window"].forEach(function(i){$(i).addEventListener("change",renderReports);});
+  $("f-q").addEventListener("input",renderReports);
+  $("login-form").addEventListener("submit",login);$("reg-form").addEventListener("submit",register);
+  $("logout").addEventListener("click",logout);$("noaccess-out").addEventListener("click",logout);
+  ["reports","levels","admins","account"].forEach(function(n){$("t-"+n).addEventListener("click",function(){tab(n);});});
+  $("add-btn").addEventListener("click",function(){openEdit(null);});
+  $("csv-btn").addEventListener("click",exportCsv);
+  $("reload-btn").addEventListener("click",function(){loadAll().then(function(){toast("โหลดข้อมูลแล้ว");});});
+  $("ad-reload").addEventListener("click",loadAdmins);
+  $("e-type").addEventListener("change",syncEditType);
+  $("edit-form").addEventListener("submit",saveEdit);$("e-cancel").addEventListener("click",closeEdit);
+  $("c-no").addEventListener("click",closeConf);
+  $("c-yes").addEventListener("click",function(){
+    var cb=confirmCb;$("c-yes").disabled=true;
+    Promise.resolve(cb&&cb()).catch(function(e){if(e.message!=="401")toast("ไม่สำเร็จ: "+e.message,6000);}).then(function(){$("c-yes").disabled=false;closeConf();});
+  });
+  $("pw-form").addEventListener("submit",changePw);
+  document.addEventListener("keydown",function(ev){if(ev.key==="Escape"){if(!$("m-conf").hidden)closeConf();else if(!$("m-edit").hidden)closeEdit();}});
+
+  if(!base||!anon||location.protocol.indexOf("http")!==0){
+    show("login");$("l-go").disabled=true;
+    $("cfg-warn").hidden=false;$("cfg-warn").textContent=location.protocol.indexOf("http")!==0?"เปิดไฟล์ตรง ๆ จากเครื่องไม่ได้ ให้เปิดผ่านลิงก์ GitHub Pages":"ยังไม่ได้ใส่ supabaseUrl และ supabaseAnonKey ใน config.js";
+  }else{
+    var saved=null;try{saved=JSON.parse(lsGet(LS)||"null");}catch(e){}
+    if(saved&&saved.refresh){
+      session=saved;
+      (Date.now()>session.exp?refresh():Promise.resolve()).then(enter).catch(function(){forceLogout("");});
+    }else show("login");
+  }
+})();
+</script>
+</body>
+</html>
